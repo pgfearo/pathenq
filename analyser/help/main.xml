@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <!-- Copyright (c) Phil Fearon 2012 - Qutoric Limited -->  
+<head id="head">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>PathEnq</title>
+<link rel="stylesheet" href="../css/jstest.css" type="text/css" />
+</head>
+<!--
+<div id="helpbar" style="padding:0px;margin:0px;"></div>
+-->
+<body>
+<p>About PathEnq (Phil Fearon - Qutoric Limited 2012)</p>
+<div id="helppage">
+<h3>PathEnq Release: 1.0.1</h3>
+<p><em>Changes in 1.0.1:<br />Added support for Console Panel (for error and fn:trace() o/p), History Panel, XPath Variables, Context Item</em></p>
+<p>This XPath 2.0 Analysis and Trace tool is coded in XSLT 2.0, the main stylesheet can be reviewed <a href="http://qutoric.com/xslt/analyser/xpathcolorer.xsl" target="_blank">here</a></p>
+<p>The XSLT compiles and runs within the browser, using the <a href="http://www.saxonica.com/ce/doc/contents.html" target="_blank">Saxon-CE</a> procesor from Saxonica. Interactive XSLT extensions (ixsl) allow user events to be handled by XSLT templates. Saxon-CE is a JavaScript application developed by Saxonica.</p>
+<h2>Getting Started</h2>
+<p>To use this tool, enter an XPath expression and press <code>Run</code>. The expression is colorized and evaluated you can then use the mouse or cursor keys to view the static evaluation context for the selected expression part. In this mode, the editor is locked until you press the <code>Edit</code> or <code>New</code> buttons.</p>
+<h2>Look Mode</h2>
+<p>A sub-expression highlighted as above, is evaluated by pressing the <code>Look</code> button. For example, with the sample, first press <code>Run</code> to enable tracing, then select <code>@cat</code>, and then press <code>Look</code> to review all <code>cat</code> attributes in that context.</p>
+<p>A sample XML file is pre-loaded for testing, but you can upload any XML source file, by dragging and dropping a file onto the files bar. If you browser doesnt' support file drag/drop, please press the <code>browse</code> button instead.</p>
+<h2>Special Characters</h2>
+<p>Expressions in the editor are evaluated by inserting them into an XSLT stylesheet, but whilst editing, no XML escaping is required - and is removed if encountered (but added again unseen during evaluation). To copy editor content for insertion into XML form, perhaps for insertion into an XSLT editor, first press the <code>&lt;escape&gt;</code> button before copying.
+</p>
+<h2>Namespaces</h2>
+<p>Namespaces are supported, but currently only if they're declared on the document element in the XML source - with prefixes the same as in the source. A declared default namespace may be used, also the XSLT and XML Schema namespaces are pre-emptively declared with the <code>xsl</code> and <code>xs</code> prefixes respectively.</p>
+<h2>Console</h2>
+<p>The console shows all diagnostics output from the Saxon processor, including error output but also output from the <code>fn:trace()</code> XPath 2.0 function. To clear the console, press the <code>Clear</code> button.</p>
+<h2>History</h2>
+<p>Each time the <code>New</code> button is pressed to create a new XPath, the previous expression is added to the history list. Expressions are auto-named according to their order - but these can be changed to be something more meaningful.</p>
+<p>In the History panel, the <code>Add</code> button adds the current XPath to the list, the <code>Clear</code> button removes all history entries.</p>
+<h2>XPath Variables</h2>
+<p>Each expression listed in the History Panel (see above) has a field reserved for the name of the expression - initially this is blank. You can reuse a saved expression as an XPath variable, by entering a suitable QName.</p>
+<h2>The Context Item</h2>
+<p>Any expression (that returns one or more nodes) saved in the History Panel can be assigned to be the context item by entering a '.' (dot character) in the name field.</p>
+<h2>PathEnq Support</h2>
+<p>This application is provided AS IS, with no warranty of any kind. But please let me know if you have feedback of any kind. Details below:</p>
+<ul><li><strong>Twitter: </strong> @pgfearo</li>
+<li><strong>Email: </strong>philipfearon@qutoric.com</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.saxonica.com/ns/doc/catalog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<section ref="about">About PathEnq</section>
+<section ref="changes">Changes in this Release</section>
+<section ref="pathenq">Using PathEnq</section>
+<section ref="evaluation">XPath Evaluation</section>
+<section ref="conditions">Licensing</section>
+<section ref="issues">Known Issues</section> 
+<section ref="support">Support</section> 
+<section ref="help-system">Using Help</section>
+</catalog>
+
+

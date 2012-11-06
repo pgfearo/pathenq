@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article id="issues" title="Known Issues">
+<h1>Version 1.0.5 - Known Issues</h1>
+
+<p>In some browsers, responsiveness of the XPath Editor (which exploits the contenteditable attribute) degrades if the current XML file is relatively large (say 100 KB). This is due to the large number of elements within the DOM, used for showing the XML source. A workaround for this is to set the <code>Hide XML Source</code> option to <code>On</code> in the <a href="/pathenq/configuration">Options Panel</a>.</p>
+
+<p>Mobile and touch-oriented devices such as tablets are not currently supported by PathEnq - touch events are not handled explicitly and file uploading would probably not work with the current drag and drop method.</p>
+
+<p>Encoding restriction: In Internet Explorer, XML files that are not UTF-8 encoded and include non-ASCII characters may fail to load (this restriction is actually down to measures taken by Saxon-CE to overcome a whitespace-preservation bug in IE-9).</p>
+</article>
+

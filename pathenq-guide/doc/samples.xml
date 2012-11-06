@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article id="samples" title="Sample Saxon Applications">
+   <h1>Sample Saxon Applications</h1>
+      
+
+      <p>Several sample applications are available. They can be downloaded as part of the
+<code>saxon-resources</code> file available from <a href="http://sourceforge.net/project/showfiles.php?group_id=29872"
+         class="bodylink">SourceForge</a>
+or from <a href="http://www.saxonica.com/download/download_page_fs.html" class="bodylink">Saxonica</a>.</p>
+
+      <p><i>Note: the example Java commands here are for the Windows platform, using the SUN
+Java Virtual Machine. UNIX users will
+have little difficulty in adapting the commands; the only real change is to use "/" instead
+of "\" in path names (this affects the command line only: the Java code itself
+ should work on any platform).</i></p>
+   <section id="tour" title="Knight's Tour">
+      <h1>Knight's Tour</h1>
+      
+
+      <p>This program is available in two forms: as an XSLT stylesheet <code>tour.xsl</code> and as
+an XQuery <code>tour.xq</code>.</p>
+
+      <p>This is a program whose output is a knight's tour of the chessboard (the knight can start
+on any square, and has to visit each square exactly once). The XSLT version was published as an example
+stylesheet in my book <i>XSLT 2.0 Programmers Reference</i> (<a href="http://www.wrox.com/" class="bodylink">Wrox Press</a>)
+but has been completely reworked so it now makes extensive use of features in XSLT 2.0,  XPath 2.0
+and XQuery. It is worth studying the stylesheet and query as an introduction to the use of the new features
+in these languages. Comparing the two versions, it can be seen that they are very similar: the only differences
+are in the surface syntax of the two languages.</p>
+
+      <p>The stylesheet can be found in the file <code>samples/styles/tour.xsl</code>, the query in
+<code>samples/query/tour.xq</code>. No source document is required.</p>
+
+      <p>You can run this example with Saxon on the Java platform using a command of the form:</p>
+      <kbd>
+java -jar saxon9.jar -it:main samples\styles\tour.xsl start=e5 &gt;tour.html
+</kbd>
+
+      <p>or</p>
+      <kbd>
+java -cp saxon9.jar net.sf.saxon.Query samples\query\tour.xq start=e5 &gt;tour.html
+</kbd>
+
+      <p>On the .NET platform, the equivalent commands are:</p>
+      <kbd>
+Transform -it:main samples\styles\tour.xsl start=e5 &gt;tour.html
+</kbd>
+
+      <p>or</p>
+      <kbd>
+Query samples\query\tour.xq start=e5 &gt;tour.html
+</kbd>
+
+      <p>When you display the resulting HTML file in your browser it should look like this:</p>
+      <div align="center">
+
+            <p><b><big>Knight's tour starting at e5</big></b></p>
+            <table border="1" cellpadding="4" size="64">
+               <tr>
+                  <td align="center" bgcolor="white">6</td>
+                  <td align="center" bgcolor="xffff44">3</td>
+                  <td align="center" bgcolor="white">8</td>
+                  <td align="center" bgcolor="xffff44">21</td>
+                  <td align="center" bgcolor="white">42</td>
+                  <td align="center" bgcolor="xffff44">51</td>
+                  <td align="center" bgcolor="white">18</td>
+                  <td align="center" bgcolor="xffff44">39</td>
+               </tr>
+               <tr>
+                  <td align="center" bgcolor="xffff44">9</td>
+                  <td align="center" bgcolor="white">22</td>
+                  <td align="center" bgcolor="xffff44">5</td>
+                  <td align="center" bgcolor="white">2</td>
+                  <td align="center" bgcolor="xffff44">19</td>
+                  <td align="center" bgcolor="white">40</td>
+                  <td align="center" bgcolor="xffff44">43</td>
+                  <td align="center" bgcolor="white">50</td>
+               </tr>
+               <tr>
+                  <td align="center" bgcolor="white">4</td>
+                  <td align="center" bgcolor="xffff44">7</td>
+                  <td align="center" bgcolor="white">20</td>
+                  <td align="center" bgcolor="xffff44">41</td>
+                  <td align="center" bgcolor="white">52</td>
+                  <td align="center" bgcolor="xffff44">49</td>
+                  <td align="center" bgcolor="white">38</td>
+                  <td align="center" bgcolor="xffff44">17</td>
+               </tr>
+               <tr>
+                  <td align="center" bgcolor="xffff44">23</td>
+                  <td align="center" bgcolor="white">10</td>
+                  <td align="center" bgcolor="xffff44">27</td>
+                  <td align="center" bgcolor="white">48</td>
+                  <td align="center" bgcolor="xffff44">1</td>
+                  <td align="center" bgcolor="white">44</td>
+                  <td align="center" bgcolor="xffff44">55</td>
+                  <td align="center" bgcolor="white">60</td>
+               </tr>
+               <tr>
+                  <td align="center" bgcolor="white">26</td>
+                  <td align="center" bgcolor="xffff44">31</td>
+                  <td align="center" bgcolor="white">24</td>
+                  <td align="center" bgcolor="xffff44">53</td>
+                  <td align="center" bgcolor="white">56</td>
+                  <td align="center" bgcolor="xffff44">61</td>
+                  <td align="center" bgcolor="white">16</td>
+                  <td align="center" bgcolor="xffff44">37</td>
+               </tr>
+               <tr>
+                  <td align="center" bgcolor="xffff44">11</td>
+                  <td align="center" bgcolor="white">28</td>
+                  <td align="center" bgcolor="xffff44">47</td>
+                  <td align="center" bgcolor="white">34</td>
+                  <td align="center" bgcolor="xffff44">45</td>
+                  <td align="center" bgcolor="white">54</td>
+                  <td align="center" bgcolor="xffff44">59</td>
+                  <td align="center" bgcolor="white">64</td>
+               </tr>
+               <tr>
+                  <td align="center" bgcolor="white">32</td>
+                  <td align="center" bgcolor="xffff44">25</td>
+                  <td align="center" bgcolor="white">30</td>
+                  <td align="center" bgcolor="xffff44">13</td>
+                  <td align="center" bgcolor="white">62</td>
+                  <td align="center" bgcolor="xffff44">57</td>
+                  <td align="center" bgcolor="white">36</td>
+                  <td align="center" bgcolor="xffff44">15</td>
+               </tr>
+               <tr>
+                  <td align="center" bgcolor="xffff44">29</td>
+                  <td align="center" bgcolor="white">12</td>
+                  <td align="center" bgcolor="xffff44">33</td>
+                  <td align="center" bgcolor="white">46</td>
+                  <td align="center" bgcolor="xffff44">35</td>
+                  <td align="center" bgcolor="white">14</td>
+                  <td align="center" bgcolor="xffff44">63</td>
+                  <td align="center" bgcolor="white">58</td>
+               </tr>
+            </table>
+         </div>
+   </section>
+   <section id="trax" title="JAXP Transformation Examples">
+      <h1>JAXP Transformation Examples</h1>
+      
+
+      <p><i>This section applies to the Java platform only.</i></p>
+
+      <p>Saxon supports the Java JAXP Transformation API, originally known as TrAX (package javax.xml.transform)
+ for invoking the XSLT stylesheet processor.
+This API is useful when you want to write your own Java applications that invoke Saxon XSLT transformations.</p>
+
+      <p>A sample program that illustrates many features of the TrAX interface (including Saxon-specific extensions)
+is included in the distribution as <strong>TraxExamples.java</strong>. Source XML and XSLT files for use with this
+program are included in the <strong>trax</strong> directory. To run the program, use the command:</p>
+      <kbd>
+cd $saxonhome/samples/trax<br/>
+java TraxExamples 
+</kbd>
+
+      <p>You can supply an argument to indicate which of the examples you want to run; see the source
+code for details. By default, they are all executed in turn.</p>
+   </section>
+   <section id="servlet" title="SaxonServlet">
+      <h1>SaxonServlet</h1>
+      
+
+      <p><i>This section applies to the Java platform only.</i></p>
+
+      <p>This is a general-purpose servlet that takes the name of a source document and XSLT stylesheet
+as URL parameters, and uses the stylesheet to process the source document, creating a result
+ document which is sent back to the browser for display. 
+ The result document may have any media type, though HTML and XML are the most likely.</p>
+
+      <p>The servlet maintains a cache of prepared stylesheets; if the same stylesheet is used repeatedly,
+it is only parsed and validated once, which will often greatly improve performance. Prepared style
+sheets are thread-safe so they can be used to serve documents to several users concurrently.</p>
+
+      <p>The URLs for the source document and the stylesheet document are supplied in the URL,
+which will typically take the form:</p>
+      <kbd>
+http://server.com/servlets/SaxonServlet?source=doc.xml&amp;style=sheet.xsl
+</kbd>
+
+      <p><i>Note: Internet Explorer assumes that if the URL ends with ".xml" or ".xsl", as in
+the above example, then the returned file will be XML - even if the media type in the HTTP header
+is set to "text/html". You can prevent this behaviour by adding an extra dummy parameter, for example
+"&amp;x=y".</i></p>
+
+      <p>The source and style parameters identify the source document and stylesheet by URL.
+These are interpreted relative to the servlet context. This means that specifying
+say "style=/styles/styleone.xsl" in the URL will locate the stylesheet in this file relative to the
+root directory for the web server.</p>
+
+      <p>The stylesheet is prepared the first time it is used, and held in memory in a cache. The cache may
+be cleared (for example, if a stylesheet has been changed) using a URL such as:</p>
+      <kbd>
+http://server.com/servlets/SaxonServlet?clear-stylesheet-cache=yes
+</kbd>
+
+      <p>This code is provided purely as a sample, in the expectation that you will customise it to your
+particular site requirements.</p>
+   </section>
+   <section id="books" title="The Book List Stylesheet">
+      <h1>The Book List Stylesheet</h1>
+      
+
+      <p>This is a very simple sample stylesheet to illustrate several Saxon extensions.
+It uses the XML file <strong>books.xml</strong> (derived from a file issued originally by Microsoft).
+You will find this in the samples\data directory. The DTD is in <strong>books.dtd</strong></p>
+
+      <p> There is a style sheet <strong>books.xsl</strong> that can be used to display the data: run this as
+follows, with the samples directory as the current directory:</p>
+
+      <p><i>On the Java platform:</i></p>
+      <kbd>
+java net.sf.saxon.Transform data\books.xml styles\books.xsl &gt;<i>output.html</i>
+         <br/>
+      </kbd>
+
+      <p><i>On the .NET platform:</i></p>
+      <kbd>
+Transform data\books.xml styles\books.xsl &gt;<i>output.html</i>
+         <br/>
+      </kbd>
+
+      <p>This produces an HTML page showing the data. (The output isn't very pretty, if you have
+time to write an improved version, please send it in).</p>
+
+      <p>The stylesheet takes a parameter named "top-author". This is the name of the "author of the week",
+and the default value is "Bonner". To run the stylesheet with a different top author, try adding to the
+end of the command line:</p>
+      <kbd>
+..... top-author=Danzig &gt;<i>output.html</i>
+         <br/>
+      </kbd>
+
+      <p>It is possible (under those operating systems I know of) to write the author's name in quotes if
+it contains spaces, e.g. top-author="A. A. Milne".</p>
+
+      <p>There is another style sheet, books-csv.xsl, which
+converts the data into a comma-separated-values file.</p>
+
+      <p>A query that runs with this data is also supplied. The command to use on the Java platform is:</p>
+      <kbd>
+java net.sf.saxon.Query -s:data\books.xml query\books.xq &gt;<i>output.html</i>
+         <br/>
+      </kbd>
+
+      <p>The equivalent on .NET is:</p>
+      <kbd>
+Query -s:data\books.xml query\books.xq &gt;<i>output.html</i>
+         <br/>
+      </kbd>
+   </section>
+   <section id="shakespeare" title="Shakespeare Example">
+      <h1>Shakespeare Example</h1>
+      
+
+      <p>This example works on an input file
+containing a Shakespeare play. You can use any of the Shakespeare plays in Jon Bosak's
+distribution at <a href="http://www.ibiblio.org/bosak/xml/eg/shaks200.zip" class="bodylink">http://www.ibiblio.org/bosak/xml/eg/shaks200.zip</a>,
+but for convenience one of them, <i>Othello</i>, is included in the Saxon distribution
+(in the samples\data directory).</p>
+      <h2 class="subtitle">Shakespeare stylesheet</h2>
+
+      <p>There is an XSLT stylesheet, <code>play.xsl</code>, which processes an input play in XML and
+generates a set of linked HTML files (one for the play and one for each scene) in an
+output directory. To run this on the Java platform, create a directory (say playhtml) and execute the following
+from the command line:</p>
+      <kbd>
+cd samples<br/>
+java net.sf.saxon.Transform data\othello.xml styles\play.xsl dir=playhtml
+</kbd>
+
+      <p>The equivalent on .NET is:</p>
+      <kbd>
+cd samples<br/>
+Transform data\othello.xml styles\play.xsl dir=playhtml
+</kbd>
+
+      <p>The last parameter sets the value of the constant <strong>dir</strong> to the value <strong>playhtml</strong>;
+this constant is referenced from the style sheet when creating output files.</p>
+      <h2 class="subtitle">Shakespeare XPath Sample Application</h2>
+
+      <p><i>This example applies to the Java platform only. However, there is also a C# version of this
+application in <code>samples/cs/XPathExample</code>.</i>
+      </p>
+
+      <p>In the <code>samples/java</code> directory is an example application called
+<code>XPathExample.java</code>. This is designed to illustrate the use of Saxon's implementation of the
+JAXP 1.3 XPath API
+from a Java application. It searches a Shakespeare play for all occurrences of a word
+entered from the console, displaying the lines containing that word, and the context where
+they appear.</p>
+
+      <p>To run this example, first ensure that it is on your classpath, and find the location of
+the <code>othello.xml</code> file in the <code>samples/data</code> directory. Open a command-line
+console, and run the application using the command:</p>
+      <kbd>
+cd samples<br/>
+java XPathExample data\othello.xml
+</kbd>
+
+      <p>The application prompts for a word. Enter the word (try "castle" or "handkerchief"). The lines
+containing the chosen word are displayed on the console. Exit the application by entering ".".</p>
+   </section>
+   <section id="bible" title="The Bible">
+      <h1>The Bible</h1>
+      
+
+      <p>The stylesheet <strong>bible.xsl</strong> takes as input an XML file containing the text of the Old
+or New Testament. These files are not included in the Saxon distribution for space
+reasons, but can be downloaded from
+ <a href="http://www.ibiblio.org/bosak/xml/eg/rel200.zip" class="bodylink">http://www.ibiblio.org/bosak/xml/eg/rel200.zip</a>
+or from various mirror sites. They were prepared by Jon Bosak.</p>
+
+      <p>The output of the stylesheet is a set of 292 HTML files in a single
+directory, which together provide a frames-oriented rendition of the text. 
+The application also works with the Old Testament text, but not with the other religious
+texts included in Jon Bosak's distribution.</p>
+
+      <p>To run the stylesheet on the Java platform first create an output
+directory (say htmldir), then execute the following from the command line :</p>
+      <kbd>
+java  net.sf.saxon.Transform  data\nt.xml  styles\bible.xsl  dir=htmldir
+</kbd>
+
+      <p>The equivalent on .NET is:</p>
+      <kbd>
+Transform  data\nt.xml  styles\bible.xsl  dir=htmldir
+</kbd>
+
+      <p>The final parameter sets the value of the XSLT parameter "dir" to
+the value "htmldir", which is referenced within the stylesheet to select a
+directory for output files.</p>
+   </section>
+   <section id="jdom" title="JDOM Example">
+      <h1>JDOM Example</h1>
+      
+
+      <p><i>This section applies to the Java platform only.</i></p>
+
+      <p>Saxon includes an adapter that allows the source tree to be a JDOM document.</p>
+
+      <p>To use this facility:</p>
+      <ul>
+         <li>
+            <p>The JAR file saxon-jdom.jar must be on the classpath</p>
+         </li>
+         <li>
+            <p>JDOM must be installed and on the classpath</p>
+         </li>
+         <li>
+            <p>You must be using JDK 1.4 or later.</p>
+         </li>
+      </ul>
+
+      <p>The sample application JDOMExample.java illustrates how a JDOM tree can be used
+with Saxon. It combines two scenarios: running XPath expressions directly against a
+JDOM tree, from the Java application; and invoking a transformation with the JDOM document
+supplied as the Source object.</p>
+
+      <p>The application is designed to take two arguments, the <code>books.xml</code> file
+in the samples/data directory, and the <code>total.xsl</code> file in the samples/styles
+directory. The application builds a JDOM tree, modifies it <i>in situ</i> to add extra
+attributes, and then references these attributes from the stylesheet.</p>
+   </section>
+   <section id="dotnetsamples" title="Example applications for .NET">
+      <h1>Example applications for .NET</h1>
+      
+
+      <p>The <code>/samples/cs</code> directory contains somer sample applications written in C#, 
+designed to illustrate use of the Saxon API available in the <code>Saxon.Api</code> namespace.
+In particular there are three programs <code>ExamplesHE.cs</code>, <code>ExamplesPE.cs</code>,
+and <code>ExamplesEE.cs</code> relevant to Saxon-HE, Saxon-PE, and Saxon-EE respectively; each shows
+various ways of invoking XSLT, XQuery, XPath, and schema validation where appropriate. The idea
+is that you should be able to cut and paste a suitable fragment of code into your own application
+as a quick way of getting started.</p>
+
+      <p>The main value of these samples is in reading the source code rather than in actually running them;
+however, running them is also a good check that your installation has been set up correctly.
+a quick look at the comments in the source should enable you to see how they are executed.
+Note that they all require the environment variable <code>SAXON_HOME</code> to be set to the directory
+where Saxon is installed: this is used to find the sample data files.</p>
+
+     <p>The example applications can be run from the command line. They take the following arguments:</p>
+     
+     <ul>
+        <li>
+            <p><strong>-dir:<i>samples</i></strong> - provides the name of the samples directory from the saxon-resources
+        download. The default uses the SAXON_HOME environment variable - but it's normally best to supply this
+        parameter explicitly.</p>
+         </li>
+        <li>
+            <p><strong>-ask:<i>yes|no</i></strong> - with ask:yes (the default), the application prompts after each test to ask if you
+        want to continue.</p>
+         </li>
+        <li>
+            <p><strong>-test:<i>testname</i></strong> - supplies the name of the test you want to run, or "all" (the default) to indicate
+        all tests.</p>
+         </li>
+     </ul>
+     
+     <p>Also in the same directory is an application <code>TestRunnerProgram.cs</code> which is a test harness
+     for running the XSLT, XQuery, and XSD test suites published by W3C (in the case of XSLT, the test data is available
+     to W3C members only).</p>
+   </section>
+</article>

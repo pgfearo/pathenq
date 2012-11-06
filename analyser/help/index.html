@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <!-- Copyright (c) Phil Fearon 2012 - Qutoric Limited -->  
+<head id="head">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>PathEnq Help</title>
+<link rel="stylesheet" href="../css/jstest.css" type="text/css" />
+</head>
+<!--
+<div id="helpbar" style="padding:0px;margin:0px;"></div>
+-->
+<body style="width:600px;margin:auto;">
+<h1 style="text-align:center">PathEnq 1.0.3 <span style="font-size:small; font-weight:normal"> - An online XPath 2.0 Analysis Tool</span></h1>
+<div id="helppage">
+<h2>About</h2>
+<p>This online application from <a href="http://qutoric.com">Qutoric</a>, evaluates XPath expressions against a target XML file with results shown in a results list. The <a href="http://saxonica.com">Saxon-CE</a> processor is used, both to drive the user-interface and to evaluate results (by creating a secondary XSLT stylesheet dynamically).</p>
+<h2>Evaluating XPath 2.0 </h2>
+<p>To evaluate an XPath expression, first select a target XML file (see below) and then enter the expression in the editor and press <code>Run</code>; the expression is colorized and a lists of results show in the <code>Results</code> tag</p>
+<h2>Target XML Files</h2>
+<p>A sample XML file is pre-loaded for testing, but you can upload any XML source file, by dragging and dropping a file onto the file Drop Zone at the foot of the application window. If you browser doesnt' support file drag/drop, please press the <code>'browse'|'choose files'</code> button instead.</p>
+<p>All loaded files are shown as buttons in the Drop Zone where they can be selected as required, when you no longer need a file, you can press the 'X' part of the button to remove it.</p>
+<h2>Trace Mode</h2>
+<p>The <code>Trace Mode</code> button shows the current mode, this mode is off by default. You may switch on Trace Mode by clicking the button after having evaluated an XPath. In this mode, editing is disabled, instead you may select any part of the expression in the editor to just evaluate that part of the expression. The cursor keys may also be used to move the highlighted expression part, in this case, press <code>Return</code> to evaluate the currently highlighted expression part.</p>
+<h2>Source XML View</h2>
+<p>Select the <code>Source</code> tab switches the view to show the raw XML text of the selected target XML file. This is a read only view that shows the XML content prior to parsing to ensure all existing formatting whitespace is preserved.</p>
+<h2>Tree View</h2>
+<p>The tree-view shows the element hierarchy of the current XML. When you select a node in this view, the XPath for the highlighted node is shown in the status panel underneath. This view is synchronised with the XPath results table, so selecting a result node will highlight it's position in the tree.</p>
+<p>The <code>Use</code> button above the tree-view lets you review the current node attribute and child element values. An XPath is generated to show these details which are shown in the <code>Results</code> panel.</p>
+<p>The <code>Collapse</code> button (to the right of the Use button) simply collapses the tree to the 2nd-level elements.</p>
+<h2>The 'Minor' XPath Bar</h2>
+<p>This is a smaller read-only panel below the XPath editor that shows ancillary XPath expressions used to generate results - either in <code>Trace</code> mode, or when the <code>Use</code> button in the tree-view panel is exploited.</p>
+<p></p>
+<h2>Special Characters</h2>
+<p>Expressions in the editor are evaluated by inserting them into an XSLT stylesheet, but whilst editing, no XML escaping is required - and is removed if encountered (but added again unseen during evaluation). To copy editor content for insertion into XML form, perhaps for insertion into an XSLT editor, first press the <code>&lt;escape&gt;</code> button before copying.
+</p>
+<h2>Namespaces</h2>
+<p>Namespaces are supported, but currently only if they're declared on the document element in the XML source - with prefixes the same as in the source. A declared default namespace may be used, also the XSLT and XML Schema namespaces are pre-emptively declared with the <code>xsl</code> and <code>xs</code> prefixes respectively.</p>
+<h2>Console</h2>
+<p>The console shows all diagnostics output from the Saxon processor, including error output but also output from the <code>fn:trace()</code> XPath 2.0 function. Any XML parser errors are also shown in the console. To clear the console, press the <code>Clear</code> button.</p>
+<h2>History</h2>
+<p>Each time the <code>New</code> button is pressed to create a new XPath, the previous expression is added to the history list. Expressions are not named initially - but names can be assigned for convenience, but also so previous expressions can be referenced as XPath variables (see below).</p>
+<p>In the History panel, the <code>Add</code> button adds the current XPath to the list, the <code>Clear</code> button removes all history entries.</p>
+<h2>XPath Variables</h2>
+<p>Each expression listed in the History Panel (see above) has a field reserved for the name of the expression - initially this is blank. You can reuse a saved expression as an XPath variable, by entering a suitable QName.</p>
+<h2>The Context Item</h2>
+<p>Any expression (that returns one or more nodes) saved in the History Panel can be assigned to be the context item by entering a '.' (dot character) in the name field of the <code>History</code> panel.</p>
+<h2>View Options</h2>
+<p>The XPath Editor can't be resized with the mouse, but there are 3 size options: <code>normal, large</code> and <code>x-large</code>. To select one of these, first click the <code>Options</code> button, select the required size and then press <code>Ok</code>.</p>
+<h2>Implementation Notes</h2>
+<p>This XPath 2.0 Analysis and Trace tool is coded in XSLT 2.0, the main stylesheet can be reviewed <a href="http://qutoric.com/xslt/analyser/xpathcolorer.xsl" target="_blank">here</a></p>
+<p>The XSLT compiles and runs within the browser, using the <a href="http://www.saxonica.com/ce/doc/contents.html" target="_blank">Saxon-CE</a> procesor from Saxonica. Interactive XSLT extensions (ixsl) allow user events to be handled by XSLT templates. Saxon-CE is a JavaScript application developed by Saxonica.</p>
+<h2>Known Issues</h2>
+<p>In Internet Explorer 9 and 10, responsiveness of the XPath Editor (which exploits the <code>contenteditable</code> attribute) degrades if the current XML file is relatively large (say 100 KB). This is an issue with the DOM implementation rather than a JavaScript issue, so there is no easy workaround for this - except to select a smaller file as the current XML whilst edting XPath.</p>
+<p>Mobile and touch-oriented devices such as tablets are not currently supported by PathEnq - touch events are not handled explicitly and file uploading would probably not work with the current drag and drop method.</p>
+<p>Encoding restriction: In Internet Explorer, XML files that are not UTF-8 encoded and include non-ASCII characters may fail to load (this restriction is actually down to measures taken by Saxon-CE to overcome a whitespace-preservation bug in IE-9).</p>
+<h2>PathEnq Support / Notices</h2>
+<p>This application is provided AS IS, with no warranty of any kind. But please let me know if you have feedback of any kind. Details below:</p>
+<ul><li><strong>Twitter: </strong> @pgfearo</li>
+<li><strong>Email: </strong>philipfearon@qutoric.com</li>
+</ul>
+</div>
+</body>
+</html>

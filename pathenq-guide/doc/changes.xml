@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article id="changes" title="Changes in this Release">
+<h1>Version 1.0.5</h1>
+
+<p>This release includes relatively minor updates to keyboard control
+and XML content navigation. There are now <code>Prev / Next</code> buttons
+also to provide another method to move through XPath results.</p>
+
+<nav>
+<ul/>
+</nav>
+      
+<section id="tree-view" title="Tree-view Navigation">
+<h1>Tree-view Navigation</h1>
+<p>This release brings basic keyboard navigation to the tree-view that might be novel in a web app, but is standard in desktop applications:</p>
+<p>See <a href="/pathenq/reviewing/treeview">Tree-view Panel</a></p>
+<h2>Navigation</h2>
+<p>Use the <code>Up</code> / <code>Down</code> cursor keys to move quickly up and down the element hierarchy shown in the tree. To expand or collapse a tree node, use the <code>right</code> and <code>left</code> buttons respectively.</p>
+<h2>Result-item Binding</h2>
+<p>There is now a 2-way binding between the Tree-view and the the Result-items table. So selecting an item/node in one, will automatically highlight the corresponding item in the other (if there is a match).</p>
+<p>With the Tree-view, or Results table selected, pressing the <code>Enter</code> key or the <code>Use</code> button results in the Results table being updated to show details of attributes and child elements of the current element.</p>
+</section>
+<section id="help" title="New Help System">
+<h1>New Help System</h1>
+<p>This documentation system  was introduced in version 1.0.4. It bring seach capabilities, a tree outline, a 'breadcrumbs' view and previous/next page buttons. It also makes the task of authoring the help a great deal easier.</p>
+</section>
+
+</article>
+

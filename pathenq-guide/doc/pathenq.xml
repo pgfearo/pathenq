@@ -1,0 +1,158 @@
+<article id="pathenq" title="Using PathEnq">
+<h1>Using PathEnq</h1>
+
+<p>Whilst PathEnq is a very simple tool, there are a still few things to learn; this section describes the main topics:</p>
+<nav><ul/></nav>
+<section id="loading" title="Loading Source XML">
+<h1>Loading Source XML</h1>
+<h2>From the file-system</h2>
+<p>A sample XML file is pre-loaded for testing, but you can upload any XML source file, by dragging and dropping a file onto the file Drop Zone at the foot of the application window. If you browser doesnt' support file drag/drop, please press the 'browse'|'choose files' button instead.</p>
+<p>
+<img src="/docimg/xml-source.png" alt="Screenshot of PathEnq"
+data-caption="The file drag and drop bar: For importing, selecting and removing XML files"
+/>
+</p>
+<p>All loaded files are shown as buttons in the Drop Zone where they can be selected as required, when you no longer need a file, you can press the 'X' part of the button to remove it.</p>
+<h2>From the web</h2>
+<p>XML files can be loaded into PathEnq from the web by entering the file URL into the URL box in the application bar. Files loaded in this way will appear in the 'Drop Zone' in the same way as files that are dragged in from the desktop.</p>
+<p>
+<img src="/docimg/enter-url.png" alt="Screenshot of PathEnq"
+data-caption="An XML file URL may be entered in the application bar"
+/>
+</p>
+
+</section>
+
+<section id="editing" title="Editing XPath">
+<h1>Editing XPath</h1>
+<img src="/docimg/editor.png" alt="Screenshot of PathEnq Editor"
+data-caption="The XPath Editor - with 'Minor XPath' bar below"
+/>
+<p>In PathEnq, XPath expressions are edited in the main XPath panel at the top of the applicaiton. A sample expressions is shown when you first load PathEnq. To clear any expression from the editor, press the <code>New</code> button.</p>
+<p>Note that an expression cleared with the <code>New</code> button will be copied to the <code>History</code> panel, from here it can be reloaded into the editor later - or used in other expressions (see the <a href="../reusing">Reusing Expressions</a> section)</p>
+<h2>Character References and XML Entity References</h2>
+<p>This editor is designed to work with XPath expressions that may be copied from XML resources such as XSLT. As such, if it encounters XML character or entity references when first evaluated, these are resolved to their literal form to make a valid XPath expression.</p>
+<p>For example, when first evaluated, the following XPath text:</p>
+<samp>/library/books[@price &amp;lt; 25]</samp>
+<p>is converted to:</p>
+<samp>/library/books[@price &lt; 25]</samp>
+<p>The resulting XPath can not be used in well-formed XML as such, there is therefor an <code>Escape</code> button above the editor that will convert invalid characters back to references.</p>
+<p>See the <a href="/evaluation">XPath Evaluation</a> section for full details on XPath evaluation, including setting the context item.</p>
+
+
+</section>
+
+<section id="reusing" title="Reusing Expressions">
+<h1>Reusing XPath Expressions</h1>
+<img src="/docimg/history.png" alt="Screenshot of PathEnq History Panel"
+data-caption="The History panel: Store expressions to reference as variables or to edit later"/>
+<p>As described in the <a href="../editing">Editing XPath</a> section, the History panel stores a new XPath expression each time the <code>New</code> button is pressed. If you need to save expressions more frequently than this, there is an <code>Add</code> button just above the panel.</p>
+<p>The <code>Name</code> column in the History table is initially left blank. You can add/rename an expression, by editing the corresponding field. Once an expression is named it can be referenced by any following expression as an XPath $variable.</p>
+<p>To clear all expressions in the history, press the <code>Clear</code> button, note that this action can not be reversed!</p>
+</section>
+
+<section id="reviewing" title="Reviewing and Navigating Results">
+<h1>Reviewing and Navigating Results</h1>
+<p>The Tree-view and Results panel are used for navigating and reviewing the source XML and evaluation output respectively. Results can be selected using the <code>Prev / Next</code> buttons above the Results Panel, or by directly selecting a result in the results table using the mouse or keyboard.</p>
+<img src="/docimg/pathenq-results.png" alt="Screenshot of PathEnq Tree-view and Results panel."
+data-caption="The Tree-view (left) and Results panel (right)."
+/>
+<nav><ul/></nav>
+<section id="treeview" title="Tree-view Panel">
+<h1>Tree-view</h1>
+<p>The Tree-view panel shows the element hierarchy of the currently selected XML document.</p>
+<img src="/docimg/tree.png" alt="Screenshot of PathEnq Tree-view and toolbar"
+data-caption="The Tree-view and its toolbar "
+/>
+<aside>The <code>Collapse All</code> button (with the Chevron icon) on the tree-view toolbar will collapse all nodes in the tree up to the 2nd level.</aside>
+<p>You can use either the mouse or up/down cursor keys to move through the tree. The left/right cursor keys are also used to collapse or expand tree-nodes. The current node is always highlighted.</p>
+<p>The XPath location of the current node is shown in the status panel below. Pressing the <code>Enter</code> key or the <code>Use</code> button (see the tree-view toolbar) results in the details of the current element being displayed in the adjacent results panel.</p>
+<img src="/docimg/tree-bottom.png" alt="Screenshot of PathEnq Tree-view bottom"
+data-caption="The XPath Location for the current node is shown below the tree."
+/>
+<aside>The tree-view works in combination with the results table, so corresponding items are highlighted as you navigate through them.</aside>
+</section>
+<section id="resultspanel" title="Results Panel">
+<h1>Results Panel</h1>
+<p>The Results Panel is the container for the table that shows the result of an XPath expression as soon as you press <code>Run</code>. The number of items in the result table is shown in the status bar below.</p>
+<img src="/docimg/results-xsmall.png" alt="Screenshot of PathEnq XPath Results"
+data-caption="Results can be shown for expressions, but also for trace and current tree node detail"
+/>
+<p>You can navigate through results using the keyboard up/down keys or the mouse. The current row is highlighted. If the current result itme is a node then the XPath for this is updated in the status bar below the results table, also the containing element node will be highlighted in the adjactent tree-view.</p>
+<p>The results table gives the following details for each result item in the result sequence</p>
+<table border="1" style="width:400px;margin:auto;">
+<thead>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+</thead>
+<tbody>
+<tr><td>#</td>
+<td>The 1-indexed position in the sequence</td>
+</tr>
+<tr><td>Type</td>
+<td>The item type. If an atomicType, then this could be xs:string or xs:decimal for example. If a node-type then the type of node is shown, i.e. attribute, element etc.</td>
+</tr>
+<tr><td>Name</td>
+<td>If the item is a named node, the node name will appear here.</td>
+</tr>
+<tr><td>Value</td>
+<td>The atomic value of the item.</td>
+</tr>
+</tbody>
+</table>
+<p>&#160;</p>
+</section>
+<section id="sourcepanel" title="Source Results">
+<h1>Source Panel Results</h1>
+<p>When result items from an XPath evaluation are nodes contained with the selected source document, the containing element (or element itself) will be highlighted in the XML Source Panel as shown below.</p>
+<img src="/docimg/source-results.png" alt="Screenshot of PathEnq XPath Results"
+data-caption="Results highlighted in the Source XML view"
+/>
+<p>To navigate through the Source view, result by result, use the <code>Prev / Next</code> buttons located above the Source view.</p>
+</section>
+</section>
+<section id="debugging" title="Debugging Expressions">
+<h1>Debugging</h1>
+<p>The PathEnq tool has powerful diagnostics features for use when developing XPath, or revisting XPath expressions that no longer work as expected.</p>
+<ul>
+<li><strong><a href="qtrace">Quick Trace</a></strong></li>
+<li><strong><a href="full-trace">Full Trace</a></strong></li>
+
+</ul>
+<section id="qtrace" title="Quick Trace">
+<h1>Quick Trace</h1>
+<p>To quickly get to the root of an XPath problem, or to understand better how it is working - PathEnq provides an interactive <strong>Quick Trace</strong> feature.</p>
+<p>To use Quick Trace, first <code>Run</code> the expression as usual, but note that for this the expression doesn't even need to be complete - the key thing is that the expression is analyzed in preparation for a quick trace</p>
+<img src="/docimg/trace.png" alt="Screenshot of PathEnq Tree-view bottom"
+data-caption="The XPath Location for the current node is shown below the tree."
+/>
+<p>Now, with the expression colorized, you can switch Quick Trace on, by pressing the <code>Trace: On/Off</code> button. Once <code>Trace: On</code> shows on the button you're in Quick Trace mode. The editor turns to read only and you can now select parts of the expression in the editor to highlight them.</p>
+<p>As you highlight an expression part, the part of the expression is evaluated and the results shown in the results list, you can therefore tell, for example, if a node-test within a predicate is returning false.</p>
+</section>
+<section id="full-trace" title="Full Trace">
+<h1>Full Trace</h1>
+<p><strong>Full Trace</strong> (as referred to here to differentiate from 'Quick Trace') is part of the XPath 2.0 specification. It provides a more accurate, flexible and detailed method for diagnosing an expression, but it takes slightly more effort.</p>
+<p>To exploit this 'Full Trace', no special mode is required, instead you just need to insert 1 or more <code>fn:trace($value, $label)</code> functions within your expression. The trace function takes 2 arguments, the first <code>$value </code>is the expression you wish to test, the 2nd is your own expression it may be a simple literal string expression to use as a label, but you may query extra information here, without affecting the rest of the expression.</p>
+<p>Once you have added a <code>trace</code> function, you just run the expression normally using the <code>Run</code> button - but this time you should get some diagnostics information on the dynamic evaluation. All trace output is directed to the Console Panel (see below).</p>
+<img src="/docimg/console.png" alt="Screenshot of PathEnq Console"
+data-caption="The Console Panel showing output from the fn:trace function."
+/>
+
+</section>
+</section>
+<section id="configuration" title="Configuration">
+<h1>Configuration</h1>
+<p>There are currently only 2 aspects of this application that can be configured: the size of the XPath Editor panel and an option to hide the XML source - as this can affect responsiveness in the editor.</p>
+<p>To open the Options dialog, press the Options button on the right-hand side of the application window:</p>
+<img src="/docimg/options.png" alt="Options dialog screen"
+data-caption="The Options popup dialog: Modify view or Performance-affecting factors"
+/>
+<p>Click any option to select it, and then press the <code>Ok</code> button. </p>
+<aside>The XPath Editor size can also be changed by clicking the <code>Resize</code> button on the editor toolbar.</aside>
+
+</section>
+
+</article>
+

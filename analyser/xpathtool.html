@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <!-- Copyright (c) Phil Fearon 2012 - Qutoric Limited -->  
+<head id="head">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>PathEnq</title>
+<link rel="stylesheet" href="css/jstest.css" type="text/css" />
+<link rel="stylesheet" href="css/petree.css" type="text/css" />
+<link rel="stylesheet" href="css/render.css" type="text/css" />
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../Saxonce/Saxonce.nocache.js"></script>
+<div id="headerpart">
+<div id="options" style="display:none">
+<p id="closeoptions">Ok</p>
+<h1>Options</h1>
+<h2>Views</h2>
+<ul>
+<li id="size1">Normal</li>
+<li id="size2">Large Editor</li>
+<li id="size3">X-Large Editor</li>
+</ul>
+<h2>Performance</h2>
+<ul>
+<li id="hidesource">Hide XML Source:
+<span id="hidestate">Off</span></li>
+</ul>
+</div>
+<div id="context" style="display:none">
+<p style="float:left;">Context:</p>
+<div id="c-content" style="float:left" contenteditable="true" spellcheck="false">
+<p>for $book in /BOOKLIST/BOOKS/child::ITEM[@CAT='CR']</p>
+</div>
+<div style="clear:both"></div>
+</div>  
+<form id="toolbar" style="text-align:center;vertical-align:middle;">
+<div class="toolbutton" id="scanbutton" style="">
+<button id="trace" type="button">Run</button>
+<button id="edit" type="button" class="off">Trace:</button>
+</div>
+<div class="toolbutton" id="clearbutton" style="">
+<button id="reset" type="button">New</button>
+</div>
+
+<h1 id="pathenq-title"> <a style="color:white;font-size:large" href="../pathenq/" target="_blank">PathEnq </a>
+<!--
+<span style="font-size:small;font-weight:normal;color:white;"> - XPath 2.0 Editor</span>
+-->
+<a href="../pathenq-guide/" target="_blank" style="font-size:small;color:#faeafe;text-decoration:underline;padding-left:20px;font-weight:normal">Help</a>
+
+
+</h1>
+<div style="height:34px; background-color:#acbaee; float:right; margin-top:0px; padding-left:3px; padding-right:3px; padding-bottom:3px; margin-right:0px; margin-left:5px">
+<button id="escapebutton" type="button">&lt;escape&gt;</button>
+<button id="helpbutton" type="button">Resize</button>
+</div>
+<p id="xmlurl" contenteditable="true" value="Enter URL" type="text" spellcheck="false" style="float:left;">Enter URL (or use drop-zone below)</p>
+<!--
+<div class="toolbutton" id="keyview" style="display:none">
+<p id="keypara" style=""><span class="numeric">Key: </span><span class="qname">name </span><span class="function">function </span><span class="axis">axis </span><span class="op">operator</span>
+<span class="literal">literal </span><span class="variable">variable </span><span class="type-name">type </span><span class="comment"> comment </span><span class="numeric">numeric </span></p>
+</div>
+
+-->
+</form>
+<div id="editbox">
+<div id="wrapper">
+<div id="content" contenteditable="true" spellcheck="false">
+<p>for $book in /BOOKLIST/BOOKS/child::ITEM[@CAT='CR']</p>
+<p>return round($book/trace(QUANTITY,'q') * $book/PRICE)</p>
+</div>
+</div>
+</div>
+<div id="location">
+<p><span class="qname">Edit XPath 2.0 expression and press </span><span class="op">Run</span><span class="qname"> to evaluate. Use <span class="op">Trace</span> mode to select (with mouse or [cursor | enter] keys) and evaluate parts of the XPath.</span></p>
+</div>
+</div>
+<div id="contentpath">
+<div id="results">
+<div id="xlist">
+<div id="xbar">
+<p class="lefthot" id="r-xbody">Console</p>
+<p class="left" id="r-nav">Tree</p>
+<p class="left" id="r-xtable">History</p>
+<p class="right" style="display:none" id="collapse">Collapse</p>
+<p class="right" style="display:none">Use</p>
+<p class="right">Clear</p>
+<p id="addhistory" class="right" style="display:none">Add</p>
+<div style="clear:both">
+</div>
+</div>
+<div id="xbody" style="display:block">
+<p>Initialising - please wait...</p>
+</div>
+
+<div id="nav" style="display:none">
+<ul>
+<li class="open"><span>top-level</span>
+<ul>
+<li class="open"><span>one</span>
+<ul>
+<li class="empty"><span>alpha</span></li>
+</ul>
+</li>
+<li class="closed"><span>two</span></li>
+<li class="empty"><span>three</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="xtable" style="display:none">
+<table>
+<colgroup>
+<col id="xc1"/>
+<col id="xc2"/>
+<col id="xc3"/>
+</colgroup>
+<thead>
+<tr>
+<td>#</td>
+<td><span style="margin-left:5px;">Name</span></td>
+<td>XPath</td>
+</tr>
+</thead>
+<tbody id="xtbody">
+</tbody>
+</table>
+</div>
+
+</div>
+<div id="table" class="thin">
+<div id="resultbar">
+<p class="lefthot" id="r-resulttable">Results</p>
+<p class="left" id="r-source">Source</p>
+<!--
+<p class="left" id="r-browser">Web Page</p>
+-->
+<p class="right" id="showoptions">Options</p>
+<p class="sel-result">Result: <span id="result-place">0</span> of <span id="result-count">0</span></p>
+<p class="right" id="nextRow">&#160;</p>
+<p class="right" id="prevRow">&#160;</p>
+<p id="addhistory" class="right" style="display:none">Add</p>
+<div style="clear:both">
+</div>
+</div>
+<div id="resulttable">
+<table>
+<colgroup>
+<col id="c1"/>
+<col id="c2"/>
+<col id="c3"/>
+<col id="c4"/>
+</colgroup>
+<thead>
+<tr>
+<td>#</td>
+<td>Type</td>
+<td>Name</td>
+<td>Value</td>
+</tr>
+</thead>
+<tbody id="btbody">
+</tbody>
+</table>
+</div>
+<div id="source" style="display:none"></div>
+<!--
+<div id="browser" style="display:none;background-color:white">
+<div id="browserbar">
+<p id="urlentry" style="float:left;width:300px;padding:2px 5px 2px 5px;border:solid;border-width:1px;" contenteditable="true">http://qutoric.com</p>
+<p id="urlbutton" style="float:left;background-color:#cecece;padding:2px;">Test only</p>
+<div style="clear:both"/>
+</div>
+<iframe id="web" style="position:absolute;width:90%;padding:5px;
+height:100%;overflow:auto;"></iframe>
+</div>
+-->
+</div>
+</div>
+</div>
+<div id="footerpart">
+<div id="resultpath">
+<p><span class="qname">Drag and drop new XML source files to the drop zone below.</span></p>
+</div>
+<div id="drop_zone" style="" dropzone="copy">
+<span style="padding:0px;border:0px;font-size:1px">&#160;</span>
+<!--
+<span class="hotparent"><span class="hot">mytest.xml</span>&#160;X&#160;</span>
+-->
+<!--
+<span id="drop" style="color:white; background-color:transparent; overflow:hidden;">Drag'n drop XML Files Here</span>
+-->
+<output id="xlist"></output>
+</div>
+
+<input type="file" id="xfiles" name="files[]" multiple=""/>
+</div>
+<script type="text/javascript" src="javascript/filehandler.js"></script>
+<!-- help div was here -->
+<p>&#160;</p>
+<!--
+<h2>Result</h2>
+-->
+
+<div id="two"></div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=5055949; 
+var sc_invisible=1; 
+var sc_partition=56; 
+var sc_click_stat=1; 
+var sc_security="15bce4c1"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div
+class="statcounter"><a title="free hit counters"
+class="statcounter"
+href="http://www.statcounter.com/free_hit_counter.html"><img
+class="statcounter"
+src="http://c.statcounter.com/5055949/0/15bce4c1/1/"
+alt="free hit counters" /></a>
+</div>
+</noscript>
+<!-- End of StatCounter Code -->
+
+<!-- JavaScript for PathEnq -->
+<script type="text/javascript" language="javascript" src="javascript/tools.js"></script>
+<script type="text/javascript" language="javascript" src="javascript/paths.js"></script>
+</body>
+</html>

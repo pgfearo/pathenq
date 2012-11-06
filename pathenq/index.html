@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]>
+<!-->
+<html lang="en"> <!--
+<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+ ==================================================-->
+<meta charset="utf-8" />
+<title>PathEnq</title>
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<!-- Mobile Specific Metas
+ ==================================================-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- CSS
+ ==================================================-->
+<link rel="stylesheet" href="stylesheets/base.css" />
+<link rel="stylesheet" href="stylesheets/skeleton.css" />
+<link rel="stylesheet" href="stylesheets/layout.css" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+	<!-- Favicons
+	==================================================-->
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+
+</head>
+<body>
+
+
+
+<!-- Primary Page Layout
+	==================================================-->
+
+<!-- Delete everything in this .container and get started on your own site! -->
+<div class="container">
+<div class="five columns">
+<h1 class="remove-bottom" style="margin-top: 40px">PathEnq</h1>
+<h2><em>Home</em></h2>
+<h5>Online XPath 2.0 Editor</h5>
+<p style="font-size:x-small">Version 1.0.5 from: <a href="http://qutoric.com">Qutoric Limited 2012</a></p>
+</div>
+<div class="five columns" style="margin-top:40px;">
+<img src="../pathenq-guide/image/pathenq-2-64.png"></img>
+<ul style="margin-top:2px;">
+<li><a href="http://www.qutoric.com/xslt/analyser/xpathtool.html" style="color:#4c3aac">Run PathEnq</a></li>
+<li><a href="http://www.qutoric.com/xslt/pathenq-guide/" style="color:#4c3aac;">View Full Documentation</a></li>
+<li><a href="screenshots.html" style="color:#4c3aac;">Screenshots</a></li>
+</ul>
+</div>
+<div class="six columns">
+<div>
+<img src="images/tablet.png" style="width:100%;height;100%"></img>
+</div>
+
+</div>
+<hr />
+</div>
+
+<div class="container">
+<div class="one-third column">
+<h3>Introduction</h3>
+<p>Welcome to the home page of PathEnq, an XPath 2.0 editor, tester, debugger that also serves as a generic online XML analysis tool.</p>
+<p>This open source web application runs as JavaScript in any popular browser. It uses the <a href="http://saxonica.com">Saxon-CE</a> XSLT 2.0 processor to host and run XPath expressions.</p>
+<h4>Getting Started</h4>
+<p>PathEnq loads, with a sample XML file and XPath expression pre-loaded by default. To see PathEnq in action, simply press the <code>Run</code> button. You will see the expression colorized, a trace output in the console and a list of results in the results panel.</p>
+<p>With an expression evaluated, you can try out the diagnostics features of this editor: click the <code>Trace</code> button and then click on any parts of the expression within the editor. You will see the results list change as you select parts of the expression.</p>
+<h3>License</h3>
+<p>If you wish to copy or resuse all or part of this software, PathEnq itself is open source under the Apache 2.0 license but there is a third-party dependency on the Saxon-CE processor - you will need a commercial license for this if you want to run PathEnq on your own server.</p>
+</div>
+<div class="one-third column">
+<h3>Main Features</h3>
+<ul class="square">
+<li><strong>XPath Syntax Coloring</strong></li>
+<li><strong>Detailed Documentation</strong></li>
+<li><strong>Interactive Analysis</strong> All panels in this app work interactively and synchronously, to provide an instant analysis of a result item.</li>
+<li><strong>Source XML</strong> Local XML documents are loaded with drag'n drop or use a URL for remote documents.</li>
+<li><strong>XML Source View</strong> Preserves all whitespace, including that deemed non-significant by browser's own XML viewers - such as line-feeds within attributes.</li>
+<li><strong>XPath Generation</strong> Select part of the XML text view or tree-view to see the corresponding XPath.</li>
+<li><strong>XPath Quick-Trace</strong>: In Trace mode, select any part of an expression to review an evaluation of the corresponding sub-expression for the selected part.</li>
+<li><strong>XPath Full-Trace</strong> Review standard <code>fn:trace()</code> output from the XPath processor in the console</li>
+<li><strong>Element Tree-View</strong> Select tree-view elements using the keyboard or mouse and review corresponding XPath, results and Source XML for the selected element.</li>
+<li><strong>XPath History</strong> Previous expressions are saved in the History view where they can be named for reuse later on.</li>
+<li><strong>XPath Variables and Context</strong> Quickly set the context node and variables by assigning names to stored XPaths.</li>
+<li><strong>Namespaces</strong> Uses namespaces declared in the root element of the source XML document - including the default namespace.</li>
+</ul>
+</div>
+<div class="one-third column">
+<h3>Support</h3>
+<p>Please contact <a href="mailto:support@qutoric.com">support@qutoric.com</a> with any issues, queries or feature requests, I will do my best to give a timely reply but please bear in mind that this is a 'spare-time' project so there may be other priorities.</p>
+<h3>About</h3>
+<p>PathEnq is predominantly coded in XSLT 2.0, it also uses JavaScript functions where side-effects are an issue, or HTML 5 features are being used.</p>
+<p>The JavaScript API for Saxon-CE was used to keep separation of concerns by  running 3 different XSLT 2.0 processor instances. This also helps spread the 'compile-time' factor.</p>
+<p>Whilst core functionality is in place, this product is still in development - so I'm keen to learn of any suggestions for future enhancements.</p>
+<h3>Disclaimer</h3>
+<p>QUTORIC LIMITED IS NOT RESPONSIBLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, 
+DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES.</p>
+</div>
+
+</div><!-- container -->
+
+
+
+<!-- JS
+	==================================================-->
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=5055949; 
+var sc_invisible=1; 
+var sc_partition=56; 
+var sc_click_stat=1; 
+var sc_security="15bce4c1"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div
+class="statcounter"><a title="free hit counters"
+class="statcounter"
+href="http://www.statcounter.com/free_hit_counter.html"><img
+class="statcounter"
+src="http://c.statcounter.com/5055949/0/15bce4c1/1/"
+alt="free hit counters" /></a>
+</div>
+</noscript>
+<!-- End of StatCounter Code -->
+<!--
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="javascripts/tabs.js"></script>
+-->
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
+

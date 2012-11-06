@@ -1,0 +1,51 @@
+<article id="evaluation" title="XPath Evaluation">
+<h1>XPath Evaluation</h1>
+<p>In PathEnq, XPath 2.0 expressions are evaluated using the Saxon-CE XSLT 2.0 processor, a JavaScript application running in your browser.</p>
+<p>This section details features that allow you to control certain aspects of the XPath evaluation context, however, because execution is occurring in the browser, there are certain restrictions on your XPath expressions.</p>
+<h2>The Context Item</h2>
+<p>By default, the context item is the root node of the selected XML source file. You can change this by selecing a saved expression in the session <a href="/pathenq/reusing">history</a> and changing its name to '.' (the <em>dot</em> character).</p>
+<p>The context item is implemented internally by wrapping the XPath expression in an <code>xsl:for-each</code> instruction, so you may use any expression that returns a sequence of one or more items, so the context size may have a value of 1 or greater.</p>
+<h2>Namespaces</h2>
+<p>All namespace declarations, including that for the default namespace, found on the document element are added to the evaluation context. Note that some prefixes may clash with PathEnq's own pre-defined namespaces - listed <a href="predefined">here</a></p>
+<h2>Support for fn:doc()</h2>
+<p>Due to browser restrictions, you can't access external documents using the XPath 2.0 <code>doc</code> function. You can however use an extension function, <code>js:doc</code> that provides access to any uploaded file, using just the filename as the URI, e.g. <code>js:doc('sample.xml')</code></p>
+<h2>Special XML Characters</h2>
+<p>You will see that any XML character references (e.g. <code>&amp;#xa0</code>) or (pre-defined) entity references (e.g. <code>&amp;lt;</code>) are changed in the editor automatically the first time you evaluate an expression.</p>
+<p>If you need to insert the XPath back into an XML file, first press the <code>Escape</code> button before copying - this converts reserved XML characters to entity references again.</p>
+<h2>Support for fn:trace()</h2>
+<p>Output from the <code>fn:trace()</code> function is directed to the Console Panel, described in more detail in the <a href="/pathenq/debugging/full-trace">Full-Trace</a> section</p>
+<h2>Quick-Trace</h2>
+<p>A 'Quick-Trace' feature is also provided that lets you select sub-expressions to evaluate them, see the <a href="/pathenq/debugging/qtrace">Quick Trace</a> section for more detail.</p>
+<section id="predefined" title="Pre-defined Namespaces">
+<h1>Pre-defined Namespaces</h1>
+<p>Due to the way expressions are evaluated in XPath (using XSLT), the system relies on a number of pre-defined namespaces. An evaluation error will occur if your source xml uses one of the pre-defined prefixes but with a different namespace. The predefined namespaces are listed below:</p>
+<table border="1">
+<thead>
+<tr><td>Prefix</td>
+<td>Namespace URI</td>
+</tr>
+
+</thead>
+<tbody>
+<tr>
+<td>xsl</td>
+<td>http://www.w3.org/1999/XSL/Transform</td>
+</tr>
+<tr>
+<td>xs</td>
+<td>http://www.w3.org/2001/XMLSchema</td>
+</tr>
+<tr>
+<td>js</td>
+<td>http://saxonica.com/ns/globalJS</td>
+</tr>
+<tr>
+<td>f</td>
+<td>urn:local-function</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+</article>
+

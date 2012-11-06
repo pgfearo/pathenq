@@ -1,0 +1,94 @@
+#nav * {
+   padding:0;
+   margin:0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.3em;
+}
+#nav * {
+    color: #808080;
+}
+
+#nav ul {
+    list-style-type:none;
+    margin-left:1em;
+}
+#nav, #xbody, #xtable {
+    background-repeat: repeat-y;
+    background-position: right;    
+    background-image: url(../image/light-dark12.png); 
+}
+
+#nav ul li {
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    margin-top:0;
+    margin-bottom: 0;
+    padding-left: 14px;
+}
+#nav span, #nav a {
+    padding-top:1px;
+    padding-bottom:2px;
+    padding-right-1px;
+    font-family:verdana;
+    font-size:10pt;
+    text-decoration:none;
+}
+#nav ul li span.hot, #nav ul li a.hot {
+    background-color: yellow;
+}
+
+#nav li.empty {
+    background-image: url(../image/squareClosed.png); 
+}
+#nav li.open {
+    background-image: url(../image/triangleOpenBlack.png);
+}
+#nav li.closed {
+    background-image: url(../image/triangleClosedGray.png);
+}
+#nav li.closed ul {
+    display:none !important;
+}
+#nav li.open ul {
+    display:block;
+}
+#nav li.empty:hover {
+    background-image: url(../image/squareOpen.png);
+}
+#nav li.open:hover {
+    background-image: url(../image/triangleOpenGreen.png);
+}
+#nav li.closed:hover {
+    background-image: url(../image/triangleClosedGreen.png);
+}
+#collapse {
+    background-position: center;
+    width: 20px;
+    color:transparent!important;
+    background-repeat: no-repeat;
+    background-color:white!important;
+    background-image: url(../image/collapse.png);
+}
+    #collapse:hover {
+        border-color:white;
+    }
+
+#nav ul li:hover {
+    cursor: pointer;
+}
+#nav ul li span:hover, #nav ul li a:hover {
+    color: #3897e0;
+}
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+       -webkit-tap-highlight-color: rgba(0,0,0,0);
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+

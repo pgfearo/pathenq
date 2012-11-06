@@ -1,0 +1,55 @@
+﻿  /*.c  {cursor:pointer}
+  .b  {color:red; font-family:'Courier New';
+       text-decoration:none}
+  .e  {margin-left:1em; text-indent:-1em; margin-right:1em}
+  .k  {margin-left:1em; text-indent:-1em; margin-right:1em}
+  .t  {color:#700000}
+  .xt {color:#990099}
+  .ns {color:red}
+  .dt {color:green}
+  .m  {color:blue}
+  .tx {color:#252350}
+  .av {color:#255060}
+  .an {color:#CC0000}
+  .db {text-indent:0px; margin-left:1em; margin-top:0px;
+       margin-bottom:0px;padding-left:.3em;
+       border-left:1px solid #CCCCCC; font:small Courier}
+  .di {font:small Courier}
+  .d  {color:blue}
+  .pi {color:blue}
+  .cb {text-indent:0px; margin-left:1em; margin-top:0px;
+       margin-bottom:0px;padding-left:.3em; font:small Courier;
+       color:#888888}
+  .ci {font:small Courier; color:#888888}
+  PRE {margin:0px; display:inline}
+      */
+
+  span.en, span.cl, span.enx {
+    color: #d02693!important;
+  }
+    span.eq-equ, span.z, span.sc, span.scx, span.ec, span.es {
+    color: blue!important;
+ }
+    span.av {
+    color:#667487!important;
+ }
+    span.atn {
+    color: red!important;
+ }
+span.txt {
+    color: black!important;
+}
+span.cd {
+    color: #73597d!important;
+}
+span.cm {
+    color: #9db98d!important;
+}
+div.page {
+    border-bottom-style:solid;
+    border-color:#eaebef;
+    border-width:1px;
+    margin:0px;
+    padding:0px;
+}
+

@@ -1,0 +1,27 @@
+<article id="help-system" title="Using Help">
+<h1>Using Help</h1>
+<p>This help system runs as a single-page web application, exploiting XSLT 2.0 running in the browser. This section provides extra detail on
+how to get the most out of the documentation, along with some extra details on how Saxon-CE is
+used to run this application.</p>
+<nav><ul/></nav>
+<section id="guide" title="User Guide">
+<h1>User Guide</h1>
+<p>This section outlines the key parts to this application - designed for rendering help documentation</p>
+<h2>Breadcrumbs</h2>
+<p>This is the bar at the top of the app - it shows where you currently are in the hierarchy of the documentation, clicking items on this bar provides quick access to parent pages.</p>
+<h2>Search</h2>
+<p>Located at the top-left of the app, the <strong>search box</strong> can be used to enter in a plain-text search term, press <code>Enter</code> or the <code>search</code> button to initiate a search.</p>
+<p>A popup box shows the number of pages found with hits, the app will then navigate to the first page hit. You can now use the up/down buttons to see other pages with hits. All matching words will be highlighted in the rendered document until the popup is closed (by pressing the <code>close</code> button).</p>
+<p>To perform a <strong>Java API search</strong> for a class or class-member, prefix the name of the search item with a '#' character, for example: <code>#qualifiednamevalue</code>. The name search is not case sensitive but the search term must match the whole name.</p>
+<h2>Collapse All</h2>
+<p>Pressing this button (adjacent to the search button) collapes the Tree-view</p>
+<h2>Tree-View</h2>
+<p>This provides a collapsable hierarchical view of the Table of Contents. Nodes are expanded or collapsed by either selecting the node itself (which may change the page selection) or the adjacent arrow icon</p>
+<h3>Page Up/Page Down</h3>
+<p>Buttons for this are placed at the right edge of the application footer. Note that the keyboard <code>PgUp</code> and <code>PgDn</code> keys serve the same purpose.</p>
+<h3>Touch Control</h3>
+<p>This app should work with any touch-enabled device. The layout is optimised for desktop or tablet devices in landscape orientation.</p>
+</section>
+
+</article>
+

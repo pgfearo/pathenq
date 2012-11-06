@@ -1,0 +1,759 @@
+
+
+/* 
+Text blue: #3D5B96
+Dark blue: #c1cede
+Mid blue: #e4eef0 
+Light blue: #f6fffb
+mid green #B1CCC7
+rust #96433D
+*/
+
+/* used to give focus to table headings */
+
+th:hover { background: #e4eef0; cursor: pointer }
+
+/* used for frameset holders */
+.bgnd {
+	margin-top:0;
+	margin-left:0;
+	background: #f6fffb;
+	}
+
+/* used for menu */
+
+#toolbar {
+    height:38px;
+    background-color:#8c9ace;
+    }
+#keypara {
+    background-color:black;
+    width:450px; padding:6px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    margin:2px;
+}
+#pathenq-title {
+    float:left;
+    padding-left:32px;
+    padding-right:20px;
+    margin:0;
+    margin-left: 5px;
+    padding-top:10px;
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    background-image: url(../../pathenq-guide/image/pathenq-2-32.png); 
+}
+#location, #resultpath {
+    height:23px;
+    background-color:#8c9ace;
+    padding-top:3px;
+    margin-bottom:0px;
+    padding-bottom:0px;
+    overflow:hidden;
+}
+.toolbutton {
+    height:34px;
+    background-color:#acbaee;
+    float:left;
+    margin-top:0px;
+    padding-left:3px;
+    padding-right:3px;
+    padding-bottom:3px;
+    margin-right:0px;
+}
+
+#spanbutton {
+    margin-left:0px;
+    width: 168px;
+}
+
+#clearbutton {
+    width:84px;
+    margin-left:3px
+}
+#keyview {
+    width:480px;
+    float:right;
+    margin-top:0px;
+    padding-left:10px;
+    margin-left:2px
+}
+#drop_zone {
+    background-color:#8c9ace;
+    padding:0px;
+    padding-top:5px;
+    padding-bottom:7px;
+}
+#xlist {margin:0}
+#xbar, #resultbar {
+    background-color:#dddddd;
+    padding-top:2px;
+    padding-bottom:0px;
+    padding-left:2px;
+    padding-right:0px; 
+}
+#xbar p, #resultbar p {
+    margin:0;
+    padding:2px;
+    padding-left:4px;
+    padding-right:4px;
+    color:black;
+    cursor:default;   
+}
+#xbar p:hover, #resultbar p:hover {
+    background-color:white;
+}
+p.left, p.lefthot {
+    float:left;
+    border:solid;
+    padding-left:9px!important;
+    padding-right:9px!important;
+    border-width:1px;
+    border-left-width:0px;
+    border-bottom-width:0px;
+    border-color:#aeaeae;
+    height:21px;
+}
+p.lefthot {
+    background-color:white;
+}
+p.left:first-child, p.lefthot:first-child {
+    border-left-width:1px;
+}
+p.right {
+    float:right;
+    border:solid;
+    color:#3D5B96!important;
+    background-color:#e4eef0!important;
+    margin-right:4px!important;
+    margin-bottom:4px!important;
+    margin-top:2px!important;
+    border-color:#3D5B96;
+    border-width:1px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+    p.right:hover {
+        background-color:white!important;
+    }
+#help {
+    position:fixed;
+    background-color:#ececec;
+    top:60px;
+    left:20px;
+    width:500px;
+    overflow:none;
+    border-color:gray;
+    border-style:solid;
+    border-width:1px;
+    height:300px;
+}
+#helpbody {
+    overflow:auto;
+    position:absolute;
+    top:30px;
+    background-color:white;
+    height:270px;
+}
+#xmlurl {
+    float:right!important;
+    margin:0px;
+    padding:0px;
+    margin-top:7px;
+    font-style:italic;
+    text-decoration:none;
+    width:210px;
+    height:20px;
+    padding-left:3px;
+    margin-left:6px;
+    margin-right:6px;
+    text-align:left;
+    padding-top:4px;
+    background-color:#efecfc;
+    font-size:0.7em;
+    overflow:hidden;
+    white-space:nowrap;
+    border-style:solid;
+    border-top-width:0px;
+    border-bottom-width:0px;
+    border-color:white;
+}
+#helpbody * {
+    padding-left: 5px;
+}
+#helpbar {
+    padding:0;
+    margin:0;
+    height:5px;
+}
+#closehelp {
+    color:black;
+    background-color:#cccccc;
+    margin:2px;margin-top:2px;
+    float:right;padding:4px;
+    width:60px;text-align:center
+}
+#closehelp:hover {
+    background-color:white;
+    cursor:default;   
+}
+
+ul {
+    list-style-type: none;
+    margin:0;
+    padding-left:2px;
+}
+ul li {
+    margin:0;
+    padding-bottom:2px;
+}
+
+#xlist {
+    float:left;
+    /*overflow:auto;*/
+    height:100%;
+    width:25%;
+    background-color:white;
+}
+#table {
+   /*overflow:auto; */
+   float:right;
+   height:100%;
+   width:74%;
+   background-color:white;
+   cursor:default;
+}
+#options {
+   /*overflow:auto; */
+    position:absolute;
+    right:310px;
+    top:60px;
+    height:250px;
+    border:solid;
+    border-width:1px;
+    z-index:10;
+    border-color:#8f6c9b;
+    padding:5px;
+    width: 300px;
+   background-color:white;
+   cursor:default;
+}
+#closeoptions {
+    padding:3px;
+    width:60px;
+    text-align:center;
+    margin:0;
+    position:absolute;
+    background-color:#cecece;
+    bottom:8px;
+    right:8px;
+    border:solid;
+    border-width:1px;
+    border-color:white;
+
+}
+#closeoptions:hover {
+
+    border-color:#8f6c9b;
+}
+/* used for content pages */
+#results {
+    overflow:hidden;
+    position:absolute;
+    left:0;
+    top:116px;
+    bottom:80px;
+    width:100%;
+    background-color:#dddddd;
+}
+#xtable, #xbody, #resulttable, #source, #nav {
+    /*
+    position:relative;
+    top:0px;
+    height:273px;
+    overflow:auto;
+    */
+    position:absolute;
+    bottom:0;
+    top:28px;
+    overflow:auto;
+    background-color:white;
+}
+#source {
+    padding-left:5px;
+    padding-bottom:15px;
+    margin-bottom:0px;
+}
+#xbody, #xtable, #nav {
+    width: 26%;
+}
+#xbody {
+    margin-left:3px;
+}
+#nav {
+    padding-top:5px;
+}
+#source, #resulttable {
+    width:74%;
+}
+#footerpart {
+    position:absolute;
+    left:0;
+    bottom:0px;
+    width:100%;
+
+}
+#headerpart {
+    position:absolute;
+    top:0px;
+    left:0;
+    height:122px;
+    width:100%;
+
+}
+
+span.editCell {
+    display:block;
+    background-color:#fce9f0!important;
+    color:black!important;
+    cursor:text!important;
+    margin-left:2px;
+    margin-right:2px;
+    border-left-style:solid;
+    border-right-style:solid;
+    border-color:#eaebef;
+    padding-left:2px;
+    min-width:5px;
+    min-height:16px;
+}
+span.editCell:hover {
+    cursor:text!important;
+}
+thead {
+    background-color:#f4f4f4;
+}
+col#c1 {width:64px;}
+col#c2 {width:95px;}
+col#c3 {width:95px;}
+col#c4 {width:75%;}
+
+col#xc1 {width:35px;}
+col#xc2 {width:95px;}
+col#xc3 {width:75%;}
+
+th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 1.3em;
+	padding-left: 15px;
+	text-indent: -15px;
+	padding-right: 15px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+   border: 1px solid #cccccc; padding: 5px;
+   vertical-align:top;
+	font-size: 9pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 15px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+#btbody td {
+
+     white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+     white-space: -pre-wrap;      /* Opera 4-6 */
+     white-space: -o-pre-wrap;    /* Opera 7 */
+     white-space: pre-wrap;       /* css-3 */
+     word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+#xtbody td {
+    white-space: nowrap;
+    overflow:hidden;
+}
+table {
+    table-layout:fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#xtbody tr {
+    cursor:pointer!important;
+}
+#xtbody tr:hover {
+    /*background-color:#faeafa!important;*/
+}
+span.console-error {
+    color:red!important;
+}
+
+.main {
+	background: #e4eef0;
+	margin-top:10px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:20px;
+	SCROLLBAR-FACE-COLOR: #c1cede; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #e4eef0; 
+	SCROLLBAR-SHADOW-COLOR: #e4eef0; 
+	SCROLLBAR-ARROW-COLOR: #f6fffb; 
+	SCROLLBAR-BASE-COLOR: #e4eef0;
+}
+
+/* used for menu links */
+
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style:normal;
+	color: #305080;
+	font-weight: normal;
+	text-decoration: underline
+}
+
+/* used for in body links */
+
+a.bodylink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+/* used for table of contents level 1 */
+/*
+a.toc1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: bold;
+	text-decoration: none;
+}*/
+
+/* used for table of contents level 2 */
+
+a.toc2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+/* used for menu heading */
+.title {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 1.3em;
+}
+
+/* used for main page headings */
+
+
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: bold;
+	text-decoration: none;
+		}
+
+h1 a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-style: normal;
+	color: #3D5BE6;
+	font-weight: bold;
+	text-decoration: none;
+		}
+		
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom : thin dashed #3D5B96;
+	padding-right : 5px;
+}
+
+button {
+       margin-top:5px; width:80px; height:28px;
+}
+    button#edit {
+        width: 90px!important;
+    }
+    button.off::after {
+        content:" Off";
+    }
+    button.on::after {
+        content: " On";
+    }
+#options ul li:hover {
+    border-color:#8f6c9b;
+}
+#options ul li {
+    border: solid;
+    border-width: 1px;
+    border-color:white;
+    padding:2px;
+}
+
+span {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+	
+
+/* used for subheads in pref. to H2 etc, to limit underlining width */
+
+.subhead {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom : thin dashed #3D5B96;
+	padding-right : 5px;
+}
+
+/* used for standard text */
+
+div#location p, div#resultpath p {
+        margin-top:0px;
+        padding:2px;
+        padding-left:4px;
+        background-color:black;
+}
+
+div#content p {
+    color: yellow;
+}
+
+div#location p {
+    color: yellow;
+}
+
+p, div#source span {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 1.3em;
+}
+
+code {
+	font-family: "lucida sans typewriter", courier, monospace;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 1.3em;
+}
+
+ul {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+li {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: normal;
+
+}
+
+div#editbox {
+    background-color:black;
+    padding:0;
+    margin:0;
+}
+#wrapper {
+    margin:0;
+    padding:0;
+    padding-right:15px;
+    margin-top:0px;
+    height:50px;
+    overflow:hidden;
+    padding-top:5px;
+}
+div#content {
+      background-color:black;
+      color:white;
+      margin:0px;
+      margin-left:5px;
+      margin-right:15px;
+      height:100%;
+      width:100%;
+      overflow:auto;
+}
+
+div#content p, div#content br {
+      padding:0px;
+      margin:2px;
+}
+div.files p {
+      float:left;
+      margin:0px;
+      padding:5px;
+      width:150px;
+      color:#453080;
+}
+div.files button {
+      float:right;
+      font-size:10px;
+      height:20px;
+      margin:2px;
+      margin-right:5px;
+      padding:0px;
+}
+
+div#drop_zone span {
+    background-color:#acbaee;
+    color:#393080;
+    font-size:11px;
+    padding-top:3px;
+    padding-bottom:4px;
+    /*border:2px solid black;  #8c9ace; */
+    padding-left:5px;
+    padding-right:5px;
+}
+div#drop_zone span.hot, div#drop_zone span.hotparent {
+    background-color:white!important;
+}
+
+div#drop_zone span:hover, div#drop_zone span.hot:hover, div#drop_zone span.parent:hover, div#drop_zone span.hotparent:hover {
+    background-color:#d0aafa!important;
+    cursor:default;
+}
+span.parent, span.hotparent {
+    padding-left:3px!important;
+    padding-right:0!important;
+    border:solid;
+    border-width:0;
+    border-left-width:3px;
+    border-color:white;
+    border-left-color:#8C9ACE;
+}
+.hotrow {
+    background-color:#eacaea;
+}
+.notrow {
+    background-color:white;
+}
+
+div.files {
+    height:21px;
+    background-color:#acbaee;
+    width:300px; 
+    float:left;
+    padding-top:0px;
+    margin-top:4px;
+    padding-left:3px;
+    padding-bottom:2px;
+    margin-left:3px;
+}
+div#content p, div#content span, div#source span {	
+	font-family: "Lucida Console", "lucida sans typewriter", courier, monospace;
+}
+#source span, #source {
+    white-space: pre;
+}
+span.literal {
+       color: #B0B0B0;
+}
+span.comment {
+       color: #57E964; /*green;*/
+}
+span.op, span.type-op, span.if, span.higher, span.step {
+       color: #CABEFB;
+}
+span.axis {
+       color: #FAA040;
+}
+span.variable, span.external {
+        color: #FDD017;
+}
+span.select {
+    color: #FAAFBE; 
+}
+span.qname {
+      color: white; //indianred;
+}
+span.function, span.filter, span.parenthesis, span.node, span.node-type {
+      color: #57D3FF; //#5CB3FF;
+}
+span.numeric {
+      color: #FFFF99;
+}
+span.type-name, span.unclosed {
+      color: #FAAFBE; /* pink */
+}
+#nextRow, #prevRow {
+    width:15px;
+    background-color:transparent!important;
+    border-color:transparent;
+}
+    #nextRow:hover, #prevRow:hover {
+        border-color:#5040a0;
+    }
+#nextRow {
+    background-image: url(../image/arrow-r.png); 
+}
+#prevRow {
+    background-image: url(../image/arrow-l.png); 
+}
+.sel-result {
+    float:right;
+    padding:0px;
+    padding-top:5px!important;
+    color:#3D5B96!important;
+    width:150px
+}
+.sel-result:hover {
+    background-color:transparent!important;
+}
+
+
+/* used for tool tips */
+
+.tooltip {
+	background: #96433D;
+	color: white;
+	font-size: 8pt;
+	font-style:normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}

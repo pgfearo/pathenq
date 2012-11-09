@@ -423,6 +423,10 @@ else '50px'"/>
 <xsl:value-of select="ixsl:call(ixsl:window(), 'getId')"/>
 </xsl:function>
 
+<xsl:template match="div[@id='content']" mode="ixsl:onclick">
+<xsl:value-of select="js:setIsXPathEditorFocused()"/>
+</xsl:template>
+
 <xsl:template match="div[@id='content']/p/span" mode="ixsl:onclick">
 <xsl:value-of select="js:setIsXPathEditorFocused()"/>
 <xsl:if test="not(../../@contenteditable eq 'true')" >
@@ -445,8 +449,10 @@ else '50px'"/>
 <xsl:choose>
 <!-- Issues with 'freezing' in IE - 116:F5  82:R 72:J 78:N 81:Q -->
 <xsl:when test="$keycode = 13 and not(js:getIsXPathEditorFocused() and $traceOn)">
+<xsl:if test="not(js:getIsXPathEditorFocused())">
 <xsl:value-of select="js:preventDefault(ixsl:event())"/>
 <xsl:call-template name="evalTreeItem"/>
+</xsl:if>
 </xsl:when>
 <!--
 <xsl:when test="$keycode eq 116">

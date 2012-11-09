@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "PathEnq",
+  "description": "XPath 2.0 Editor",
+  "version": "1.0.6",
+  "app": {
+    "launch": {
+      "web_url": "http://www.qutoric.com/xslt/analyser/xpathtool.html"
+    }
+  },
+  "icons": {
+    "128": "128.png"
+  },
+  "permissions": [
+    "unlimitedStorage"
+  ]
+}

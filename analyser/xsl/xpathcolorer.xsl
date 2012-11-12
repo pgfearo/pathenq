@@ -102,14 +102,14 @@ else ''
 <!-- instead of /top/wrap/*, use /*/*/* to prevent issue with default namespace -->
 <xsl:variable name="result"
 select="js:eval(string-join(loc:escape($expr, true()),''))/*/*/*"/>
-<xsl:if test="exists($result)">
 <xsl:result-document href="#btbody" method="replace-content">
+<xsl:if test="exists($result)">
 <xsl:apply-templates select="$result"/>
 <!-- to keep js variable, append dummy -->
 <xsl:variable name="paths" as="xs:string*" select="$result/@path, 'xx'"/>
 <xsl:sequence select="js:setPaths($paths)"/>
-</xsl:result-document>
 </xsl:if>
+</xsl:result-document>
 <xsl:sequence select="js:resetCurrentRow()"/>
 <xsl:result-document href="#result-count" method="replace-content">
 <xsl:value-of select="if (exists($result)) then count($result) else 0"/>

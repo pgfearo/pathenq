@@ -184,7 +184,10 @@ else (preceding-sibling::*[@id])[last()]/@id"/>
 
 <xsl:template name="do-show">
 <xsl:param name="pathParts" as="xs:string*"/>
-<xsl:variable name="parts" select="if (starts-with($pathParts[last()], '@')) then
+<xsl:variable name="lastPart" select="$pathParts[last()]"/>
+<xsl:variable name="isAttr" select="starts-with($lastPart, '@')"/>
+<xsl:variable name="isText" select="starts-with($lastPart, 'text()')"/>
+<xsl:variable name="parts" select="if ($isAttr or $isText) then
     subsequence($pathParts, 1, count($pathParts) - 1)
 else $pathParts"/>
 <xsl:call-template name="show-elements">

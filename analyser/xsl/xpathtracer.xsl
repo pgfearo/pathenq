@@ -528,7 +528,6 @@ else '50px'"/>
 <xsl:choose>
 <xsl:when test="$keycode eq 13">
 <xsl:value-of select="js:preventDefault(ixsl:event())"/>
-
 <ixsl:schedule-action wait="20">
 <xsl:call-template name="eval"/>
 </ixsl:schedule-action>

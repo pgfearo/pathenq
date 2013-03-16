@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <article id="about" title="About PathEnq">
 <h1>About PathEnq</h1>
+<a href="https://github.com/pgfearo/pathenq"><img style="border: 0;float:left" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></img></a>
 <p>Welcome to the User Guide for PathEnq, an online XPath 2.0 Editor by Qutoric Limited.
 This web application, evaluates and debugs XPath expressions against one or more target XML files with results shown in an interactive results list.
 </p>
-<img src="/docimg/enqtree.png" alt="Screenshot of PathEnq" style="width:100%"
-data-caption="Main PathEnq Screenshot - with tree-view and source panels shown."/>
 <p>To begin, first see the <a href="started">Getting Started</a> section</p>
 <p>The <code>PgUp/PgDn</code> keys can be used to quickly move through help pages. See the <a href="/help-system/guide">User Guide</a> section for more details on using this help system.</p>
+<img src="/docimg/enqtree.png" alt="Screenshot of PathEnq" style="width:100%"
+data-caption="Main PathEnq Screenshot - with tree-view and source panels shown."/>
 <section id="started" title="Getting Started">
 <h2>Getting Started</h2>
 <p>To evaluate your first XPath 2.0 expression in PathEnq, press the <code><strong>Run</strong></code> button on the toolbar above the XPath Editor. You should see the results of the expression in the <strong>Results </strong>table immediately below.</p>
@@ -30,6 +31,5 @@ data-caption="Processor parses XML text asynchronously to colorise it without UI
 <li><strong>The Help system processor</strong> This drives the HTML 5 documentation you're viewing now. All navigation, search and rendering of the documentation is controlled through this processor.</li>
 </ul>
 </section>
-
 </article>
 
